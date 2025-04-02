@@ -1,0 +1,53 @@
+---
+import MainLayout from '../../layouts/MainLayout.astro';
+---
+
+<MainLayout title="Canadian Adventures">
+  <div class="max-w-7xl mx-auto px-4 py-12">
+    <h1 class="text-4xl font-bold mb-8">My Canadian Adventures</h1>
+    
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+      <a href="/canada/banff" class="block">
+        <div class="bg-white rounded-lg overflow-hidden shadow-md hover:shadow-lg transition">
+          <img
+            src="https://images.unsplash.com/photo-1503614472-8c93d56e92ce"
+            alt="Banff National Park"
+            class="w-full h-48 object-cover"
+          />
+          <div class="p-6">
+            <h3 class="text-xl font-semibold mb-2">Banff National Park</h3>
+            <p class="text-gray-600">A journey through the Canadian Rockies</p>
+          </div>
+        </div>
+      </a>
+
+      <a href="/canada/niagara" class="block">
+        <div class="bg-white rounded-lg overflow-hidden shadow-md hover:shadow-lg transition">
+          <img
+            src="https://images.unsplash.com/photo-1489447068241-b3490214e879"
+            alt="Niagara Falls"
+            class="w-full h-48 object-cover"
+          />
+          <div class="p-6">
+            <h3 class="text-xl font-semibold mb-2">Niagara Falls</h3>
+            <p class="text-gray-600">Nature's power at its finest</p>
+          </div>
+        </div>
+      </a>
+
+      <a href="/canada/montreal" class="block">
+        <div class="bg-white rounded-lg overflow-hidden shadow-md hover:shadow-lg transition">
+          <img
+            src="https://images.unsplash.com/photo-1519178614-68673b201f36"
+            alt="Montreal"
+            class="w-full h-48 object-cover"
+          />
+          <div class="p-6">
+            <h3 class="text-xl font-semibold mb-2">Montreal</h3>
+            <p class="text-gray-600">European charm in North America</p>
+          </div>
+        </div>
+      </a>
+    </div>
+  </div>
+</MainLayout>

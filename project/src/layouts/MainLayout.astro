@@ -1,0 +1,43 @@
+---
+const { title } = Astro.props;
+---
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>{title} | Travel Adventures</title>
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  </head>
+  <body class="bg-gray-50">
+    <nav class="bg-white shadow-md">
+      <div class="max-w-7xl mx-auto px-4">
+        <div class="flex justify-between h-16">
+          <div class="flex">
+            <a href="/" class="flex items-center">
+              <span class="text-xl font-bold text-indigo-600">Travel Adventures</span>
+            </a>
+          </div>
+          <div class="flex space-x-8">
+            <a href="/" class="inline-flex items-center px-1 pt-1 text-gray-700 hover:text-indigo-600">Home</a>
+            <a href="/canada" class="inline-flex items-center px-1 pt-1 text-gray-700 hover:text-indigo-600">Canadian Adventures</a>
+            <a href="/bucket-list" class="inline-flex items-center px-1 pt-1 text-gray-700 hover:text-indigo-600">Bucket List</a>
+            <a href="/tips" class="inline-flex items-center px-1 pt-1 text-gray-700 hover:text-indigo-600">Travel Tips</a>
+            <a href="/about" class="inline-flex items-center px-1 pt-1 text-gray-700 hover:text-indigo-600">About</a>
+          </div>
+        </div>
+      </div>
+    </nav>
+
+    <main>
+      <slot />
+    </main>
+
+    <footer class="bg-white mt-12 py-8">
+      <div class="max-w-7xl mx-auto px-4">
+        <p class="text-center text-gray-500">&copy; 2024 Travel Adventures. All rights reserved.</p>
+      </div>
+    </footer>
+  </body>
+</html>

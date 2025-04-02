@@ -1,0 +1,40 @@
+---
+import ArticleLayout from '../../layouts/ArticleLayout.astro';
+
+const frontmatter = {
+  title: "Exploring Banff National Park",
+  date: "2024-01-15",
+  image: "https://images.unsplash.com/photo-1503614472-8c93d56e92ce"
+};
+---
+
+<ArticleLayout frontmatter={frontmatter}>
+  <p class="lead mb-6">
+    Nestled in the heart of the Canadian Rockies, Banff National Park is a testament to nature's grandeur and beauty. My journey through this magnificent landscape was nothing short of breathtaking.
+  </p>
+
+  <h2 class="text-2xl font-bold mt-8 mb-4">Lake Louise: A Turquoise Wonder</h2>
+  <p class="mb-4">
+    The iconic Lake Louise, with its crystal-clear turquoise waters reflecting the surrounding Victoria Glacier, was my first stop. The early morning hike around the lakeshore offered stunning views and peaceful solitude. The Fairmont Chateau Lake Louise stands majestically against the mountain backdrop, adding a touch of human elegance to nature's masterpiece.
+  </p>
+
+  <h2 class="text-2xl font-bold mt-8 mb-4">Wildlife Encounters</h2>
+  <p class="mb-4">
+    During my trek along the Bow Valley Parkway, I was fortunate enough to spot several elk grazing in the meadows and even caught a glimpse of a grizzly bear in the distance. The park's commitment to wildlife preservation is evident in how these magnificent creatures roam freely in their natural habitat.
+  </p>
+
+  <h2 class="text-2xl font-bold mt-8 mb-4">Sulphur Mountain Adventures</h2>
+  <p class="mb-4">
+    Taking the Banff Gondola up Sulphur Mountain provided panoramic views of six mountain ranges. The boardwalk to Sanson's Peak Observatory offered a unique perspective of the Bow Valley and the town of Banff below. The crisp mountain air and the sense of being on top of the world made this experience unforgettable.
+  </p>
+
+  <div class="bg-blue-50 p-6 rounded-lg mt-8">
+    <h3 class="text-xl font-bold mb-2">Travel Tips for Banff</h3>
+    <ul class="list-disc list-inside">
+      <li>Visit during shoulder season (September-October) for fewer crowds</li>
+      <li>Book accommodations well in advance, especially for summer visits</li>
+      <li>Get an early start for popular trails to avoid crowds and find parking</li>
+      <li>Always carry bear spray and know how to use it</li>
+    </ul>
+  </div>
+</ArticleLayout>
