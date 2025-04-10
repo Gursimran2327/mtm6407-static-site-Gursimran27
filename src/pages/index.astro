@@ -41,16 +41,12 @@ const upcomingDestinations = [
   <div class="relative">
     <div class="h-[600px] bg-[url('https://images.unsplash.com/photo-1519681393784-d120267933ba')] bg-cover bg-center">
       <div class="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center">
-        <div class="text-center text-white max-w-4xl px-4">
-          <h1 class="text-5xl font-bold mb-4">Welcome to My Travel Adventures</h1>
-          <p class="text-xl mb-8">Exploring Canada's natural wonders and dreaming of worldwide destinations</p>
-          <div class="flex gap-4 justify-center">
-            <a href="/canada" class="bg-indigo-600 text-white px-6 py-3 rounded-lg hover:bg-indigo-700 transition">
-              Explore Canadian Adventures
-            </a>
-            <a href="/bucket-list" class="bg-white text-indigo-600 px-6 py-3 rounded-lg hover:bg-gray-100 transition">
-              View Bucket List
-            </a>
+        <div class="container text-center text-white px-4">
+          <h1 class="display-3 mb-4">Welcome to My Travel Adventures</h1>
+          <p class="lead mb-8">Exploring Canada's natural wonders and dreaming of worldwide destinations</p>
+          <div class="d-flex gap-4 justify-content-center">
+            <a href="/canada" class="btn btn-indigo px-6 py-3 rounded-lg">Explore Canadian Adventures</a>
+            <a href="/bucket-list" class="btn btn-outline-light px-6 py-3 rounded-lg">View Bucket List</a>
           </div>
         </div>
       </div>
@@ -58,39 +54,37 @@ const upcomingDestinations = [
   </div>
 
   <!-- Featured Posts Section -->
-  <div class="max-w-7xl mx-auto px-4 py-16">
+  <div class="container py-16">
     <div class="text-center mb-12">
       <h2 class="text-3xl font-bold mb-4">Recent Adventures</h2>
-      <p class="text-gray-600 max-w-2xl mx-auto">Join me on my journey through Canada's most breathtaking destinations, from the Rocky Mountains to the vibrant cities.</p>
+      <p class="text-muted mx-auto">Join me on my journey through Canada's most breathtaking destinations, from the Rocky Mountains to the vibrant cities.</p>
     </div>
     
-    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+    <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
       {featuredPosts.map(post => (
-        <a href={post.link} class="block group">
-          <div class="bg-white rounded-lg overflow-hidden shadow-md hover:shadow-xl transition-shadow duration-300">
-            <div class="relative overflow-hidden">
+        <div class="col">
+          <a href={post.link} class="d-block text-decoration-none">
+            <div class="card shadow-sm">
               <img
                 src={post.image}
                 alt={post.title}
-                class="w-full h-48 object-cover transform group-hover:scale-105 transition-transform duration-300"
+                class="card-img-top"
               />
+              <div class="card-body">
+                <h3 class="card-title">{post.title}</h3>
+                <p class="card-text">{post.description}</p>
+              </div>
             </div>
-            <div class="p-6">
-              <h3 class="text-xl font-semibold mb-2 group-hover:text-indigo-600 transition-colors">
-                {post.title}
-              </h3>
-              <p class="text-gray-600">{post.description}</p>
-            </div>
-          </div>
-        </a>
+          </a>
+        </div>
       ))}
     </div>
   </div>
 
   <!-- Travel Stats Section -->
   <div class="bg-indigo-50 py-16">
-    <div class="max-w-7xl mx-auto px-4">
-      <div class="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
+    <div class="container">
+      <div class="row row-cols-2 row-cols-md-4 g-8 text-center">
         <div>
           <div class="text-4xl font-bold text-indigo-600 mb-2">10+</div>
           <div class="text-gray-600">Cities Explored</div>
@@ -112,24 +106,24 @@ const upcomingDestinations = [
   </div>
 
   <!-- Upcoming Adventures Section -->
-  <div class="max-w-7xl mx-auto px-4 py-16">
+  <div class="container py-16">
     <div class="text-center mb-12">
       <h2 class="text-3xl font-bold mb-4">Dream Destinations</h2>
-      <p class="text-gray-600 max-w-2xl mx-auto">These breathtaking locations are next on my travel bucket list.</p>
+      <p class="text-muted mx-auto">These breathtaking locations are next on my travel bucket list.</p>
     </div>
     
-    <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+    <div class="row row-cols-1 row-cols-md-2 g-4">
       {upcomingDestinations.map(destination => (
-        <div class="relative h-80 rounded-xl overflow-hidden group">
-          <img
-            src={destination.image}
-            alt={destination.name}
-            class="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-300"
-          />
-          <div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent flex items-end">
-            <div class="p-6 text-white">
-              <h3 class="text-2xl font-bold mb-1">{destination.name}</h3>
-              <p class="text-gray-200">{destination.country}</p>
+        <div class="col">
+          <div class="card h-100">
+            <img
+              src={destination.image}
+              alt={destination.name}
+              class="card-img-top"
+            />
+            <div class="card-body text-white bg-dark d-flex flex-column justify-content-end">
+              <h3 class="card-title">{destination.name}</h3>
+              <p class="card-text">{destination.country}</p>
             </div>
           </div>
         </div>
@@ -139,13 +133,13 @@ const upcomingDestinations = [
 
   <!-- Newsletter Section -->
   <div class="bg-white py-16">
-    <div class="max-w-7xl mx-auto px-4">
+    <div class="container">
       <div class="bg-indigo-600 rounded-2xl p-8 md:p-12 text-center">
         <h2 class="text-3xl font-bold text-white mb-4">Stay Updated on My Adventures</h2>
         <p class="text-indigo-100 mb-8 max-w-2xl mx-auto">
           Subscribe to receive updates about my latest travel experiences, photography tips, and destination guides.
         </p>
-        <form class="max-w-md mx-auto flex gap-4">
+        <form class="max-w-md mx-auto d-flex gap-4">
           <input
             type="email"
             placeholder="Enter your email"
@@ -153,7 +147,7 @@ const upcomingDestinations = [
           />
           <button
             type="submit"
-            class="bg-white text-indigo-600 px-6 py-3 rounded-lg hover:bg-indigo-50 transition"
+            class="btn btn-light text-indigo-600 px-6 py-3 rounded-lg"
           >
             Subscribe
           </button>
@@ -163,22 +157,22 @@ const upcomingDestinations = [
   </div>
 
   <!-- Quick Links Section -->
-  <div class="max-w-7xl mx-auto px-4 py-16">
-    <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-      <div class="text-center p-6">
+  <div class="container py-16">
+    <div class="row row-cols-1 row-cols-md-3 g-4">
+      <div class="col text-center p-6">
         <h3 class="text-xl font-semibold mb-4">Travel Tips</h3>
-        <p class="text-gray-600 mb-4">Essential advice for making the most of your adventures.</p>
-        <a href="/tips" class="text-indigo-600 hover:text-indigo-700 font-medium">Learn More →</a>
+        <p class="text-muted mb-4">Essential advice for making the most of your adventures.</p>
+        <a href="/tips" class="text-indigo-600 hover:text-indigo-700">Learn More →</a>
       </div>
-      <div class="text-center p-6">
+      <div class="col text-center p-6">
         <h3 class="text-xl font-semibold mb-4">Canadian Adventures</h3>
-        <p class="text-gray-600 mb-4">Explore the beauty of the Great White North.</p>
-        <a href="/canada" class="text-indigo-600 hover:text-indigo-700 font-medium">Start Exploring →</a>
+        <p class="text-muted mb-4">Explore the beauty of the Great White North.</p>
+        <a href="/canada" class="text-indigo-600 hover:text-indigo-700">Start Exploring →</a>
       </div>
-      <div class="text-center p-6">
+      <div class="col text-center p-6">
         <h3 class="text-xl font-semibold mb-4">About Me</h3>
-        <p class="text-gray-600 mb-4">Learn about my journey and travel philosophy.</p>
-        <a href="/about" class="text-indigo-600 hover:text-indigo-700 font-medium">Read More →</a>
+        <p class="text-muted mb-4">Learn about my journey and travel philosophy.</p>
+        <a href="/about" class="text-indigo-600 hover:text-indigo-700">Read More →</a>
       </div>
     </div>
   </div>
