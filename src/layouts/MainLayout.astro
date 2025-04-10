@@ -11,33 +11,68 @@ const { title } = Astro.props;
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
   </head>
   <body class="bg-gray-50">
+    <!-- Navbar -->
     <nav class="bg-white shadow-md">
       <div class="max-w-7xl mx-auto px-4">
-        <div class="flex justify-between h-16">
-          <div class="flex">
-            <a href="/" class="flex items-center">
-              <span class="text-xl font-bold text-indigo-600">Travel Adventures</span>
-            </a>
+        <div class="flex justify-between items-center h-16">
+          <!-- Logo -->
+          <div class="flex items-center">
+            <a href="/" class="text-xl font-bold text-indigo-600">Travel Adventures</a>
           </div>
-          <div class="flex space-x-8">
-            <a href="/" class="inline-flex items-center px-1 pt-1 text-gray-700 hover:text-indigo-600">Home</a>
-            <a href="/canada" class="inline-flex items-center px-1 pt-1 text-gray-700 hover:text-indigo-600">Canadian Adventures</a>
-            <a href="/bucket-list" class="inline-flex items-center px-1 pt-1 text-gray-700 hover:text-indigo-600">Bucket List</a>
-            <a href="/tips" class="inline-flex items-center px-1 pt-1 text-gray-700 hover:text-indigo-600">Travel Tips</a>
-            <a href="/about" class="inline-flex items-center px-1 pt-1 text-gray-700 hover:text-indigo-600">About</a>
-          </div>
+
+          <!-- Hamburger button (mobile) -->
+          <button
+            id="menu-toggle"
+            class="lg:hidden text-gray-700 focus:outline-none"
+            aria-label="Toggle navigation"
+          >
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2"
+              viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round"
+                d="M4 6h16M4 12h16M4 18h16"/>
+            </svg>
+          </button>
+
+          <!-- Nav Links -->
+          <div
+          id="nav-links"
+          class="hidden flex-col items-start gap-3 lg:flex lg:flex-row lg:items-center lg:gap-8 absolute top-16 left-0 w-full bg-white px-6 py-4 shadow-md z-10 lg:static lg:w-auto lg:bg-transparent lg:shadow-none"
+        >
+          <a href="/" class="block text-gray-700 hover:text-indigo-600">Home</a>
+          <a href="/canada" class="block text-gray-700 hover:text-indigo-600">Canadian Adventures</a>
+          <a href="/bucket-list" class="block text-gray-700 hover:text-indigo-600">Bucket List</a>
+          <a href="/tips" class="block text-gray-700 hover:text-indigo-600">Travel Tips</a>
+          <a href="/about" class="block text-gray-700 hover:text-indigo-600">About</a>
+        </div>
+        
         </div>
       </div>
     </nav>
 
+    <!-- Page Content -->
     <main>
       <slot />
     </main>
 
+    <!-- Footer -->
     <footer class="bg-white mt-12 py-8">
       <div class="max-w-7xl mx-auto px-4">
         <p class="text-center text-gray-500">&copy; 2024 Travel Adventures. All rights reserved.</p>
       </div>
     </footer>
+
+    <!-- Toggle Script -->
+    <script>
+      const toggle = document.getElementById('menu-toggle');
+      const links = document.getElementById('nav-links');
+
+      if (toggle) {
+        toggle.addEventListener('click', () => {
+          if (links) {
+            links.classList.toggle('hidden');
+          }
+        });
+      }
+    </script>
   </body>
 </html>
